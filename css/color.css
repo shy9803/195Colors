@@ -1,0 +1,820 @@
+@charset "UTF-8";
+
+/* 기본 CSS (초기화 및 설정) */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: '맑은 고딕';
+    color: #333333;
+}
+ul, ol, li {
+    list-style: none;
+}
+body {
+    width: 100%;
+    height: auto;
+    background-color: #777777;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    outline: 0;
+    display: block;
+}
+
+/* 모바일용 CSS */
+/* 기본 CSS */
+#wrap {
+    width: 100%;
+}
+.cfixed::after {
+    display: block;
+    clear: both;
+}
+
+/* 헤더 영역 */
+.header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background-color: #f0f0f0;
+}
+.inner {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    text-align: right;
+}
+.logo {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+.logo a {
+    color: #d2a871;
+}
+
+.navi {
+    width: 100%;
+}
+.gnb {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #dddddd;
+}
+.gnb > li {
+    display: flex;
+    text-align: center;
+}
+.gnb > li > a {
+    width: 100%;
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+    display: block;
+}
+.gnb > li:hover {
+    background-color: #d9ce37;
+    font-weight: bold;
+}
+
+.menu-toggle-btn {
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 35%;
+}
+.menu-toggle-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #d2a871;
+}
+.menu-toggle-btn span:nth-child(2) {
+    margin: 5px 0;
+}
+
+/* 컨텐츠 영역 CSS */
+.content {
+    width: 100%;
+}
+.content section {
+    width: 100%;
+    height: auto;
+}
+
+.content section h2 {
+    margin: 2%;
+    color: #d9ce37;
+}
+.content section::after {
+    clear: both;
+}
+.content > article > section:last-child {
+    margin: 2% auto;
+}
+
+#sec00 > picture > img {
+    width: 100%;
+}
+.sticky {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.sticky ul {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1.5%;
+}
+.sticky li {
+    width: 46%;
+    height: auto;
+    background-color: #f4f4f4;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.6%;
+    border-radius: 5px;
+}
+.colorwrap {
+    width: 100%;
+    height: auto;
+}
+.colorbox {
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+}
+.colorbox div {
+    width: 100%;
+    height: inherit;
+}
+.colortitle {
+    width: 100%;
+    height: auto;
+    padding: 3px;
+}
+.colorname {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    padding: 3px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.colorname span {
+    color: #999999;
+}
+.colorname span::before,
+.colorinfo > div:nth-child(2) p span::before,
+.colorinfo > div:last-child p span::before {
+    content: "(";
+}
+.colorname span::after,
+.colorinfo > div:nth-child(2) p span::after,
+.colorinfo > div:last-child p span::after {
+    content: ")";
+}
+
+details {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 6px;
+}
+details > summary {
+    padding: 1rem;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.6rem;
+    margin-top: 5%;
+    background-color: lightgray;
+    transition: all 0.5s;
+}
+
+.colorinfo {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    padding: 5px;
+    font-size: 0.8rem;
+    margin-bottom: 5%;
+}
+.colorinfo div p:first-child {
+    color: #666666;
+    text-align: center;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+.colorinfo div p:last-child {
+    border: 1px solid #333333;
+    padding: 5px;
+    text-align: center;
+    border-radius: 3px;
+}
+.colorinfo div p span {
+    margin: 0 8px;
+}
+.colorinfo div p span:first-child {
+    margin-left: 0;
+}
+.colorinfo div p span:last-child {
+    margin-right: 0;
+}
+
+/* 콘텐츠 내 고정 영역 */
+.btnwrap {
+    width: 8%;
+    height: auto;
+    position: fixed;
+    right: 0.8%;
+    bottom: 2%;
+    z-index: 10;
+}
+.btnwrap > ul {
+    opacity: 0.45;
+}
+.btnwrap > ul > li {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+.infobtn {
+    width: 100%;
+    padding: 4px;
+    background-color: #d2a871;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+.infobtn::before {
+    content: "\2605"
+}
+.infobtn:hover {
+    background-color: #f4f4f4;
+    color: #333333;
+    font-weight: bold;
+}
+.picker {
+    margin-bottom: 4px;
+    border: 1px solid #666666;
+    border-radius: 2px;
+}
+.picker > input {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.movebtn {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    padding: 10%;
+    background-color: #d9ce37;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    color: #222222;
+}
+.movebtn::before {
+    content: "M";
+    font-weight: bold;
+}
+.movebtn:hover {
+    background-color: #333333;
+    color: #f4f4f4;
+    font-weight: bold;
+}
+.topbtn {
+    padding: 10%;
+    background-color: #f0f0f0;
+    margin-bottom: 4px;
+    border-radius: 2px;
+}
+.topbtn::before {
+    content: "▲";
+}
+.bottombtn {
+    padding: 10%;
+    background-color: #f0f0f0;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+.bottombtn::after {
+    content: "▼";
+}
+.topbtn:hover, .bottombtn:hover {
+    background-color: #666666;
+}
+
+.move_detail {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+}
+.move_detail > ul {
+    width: 100%;
+    padding: 2%;
+    margin: 2% 5%;
+    line-height: 3rem;
+}
+.move_detail > ul > li:first-child {
+    font-weight: bold;
+}
+.huetone > li {
+    cursor: pointer;
+}
+.huetone > li > a {
+    color: #d2a871;
+}
+.huetone_sec li {
+    margin: 3% 0 3% 15%;
+    line-height: 2rem;
+}
+
+/* 레이어 팝업 */
+#layer {
+    position: absolute;
+    z-index: 5;
+}
+.popup {
+    position: fixed;
+    right: 2%;
+    top: 84px;
+    width: 400px;
+    height: 400px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+.uptitle {
+    margin: 5% auto;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.upbody {
+    padding: 3%;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+.upbtn {
+    width: 80%;
+    height: 30px;
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 2.2rem;
+    background-color: #d2a871;
+    position: absolute;
+    left: 10%;
+    bottom: 5%;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.upbtn:hover {
+    background-color: #d9ce37;
+    font-weight: bold;
+}
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    /* 헤더 영역 */
+    header {
+        position: static;
+    }
+    .inner {
+        width: 96%;
+    }
+    .logo {
+        width: auto;
+        height: inherit;
+    }
+
+    .gnb {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        height: 80px;
+        position: static;
+        background-color: transparent;
+    }
+    .gnb > li {
+        display: inline-block;
+        width: 140px;
+        height: 100%;
+    }
+    .gnb > li > a {
+        width: auto;
+        margin: 0 10px;
+        padding: 8%;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    .menu-toggle-btn {
+        display: none !important;
+    }
+
+    /* 컨텐츠 영역 */
+    .sticky li {
+        width: 22%;
+    }
+    .colorbox {
+        width: 100%;
+        height: 130px;
+        padding: 8px;
+    }
+    .colorname {
+        font-size: 1rem;
+    }
+    .colorname span {
+        color: #999999;
+        font-size: 0.7rem;
+    }
+    details > summary {
+        font-size: 0.8rem;
+    }
+
+    /* 콘텐츠 내 고정 영역 */
+    .btnwrap {
+        width: 4%;
+        height: auto;
+    }
+
+    .move_detail {
+        width: 35%;
+    }
+}
+
+/* PC용 CSS*/
+@media all and (min-width: 1132px) {
+    /* 컨텐츠 영역 */
+    .sticky ul {
+        margin-bottom: 0.5%;
+    }
+    .sticky li {
+        width: 8%;
+    }
+    .colorbox {
+        width: 100%;
+        height: 100px;
+        padding: 8px;
+    }
+    .colorname {
+        font-size: 0.8rem;
+    }
+    .colorname span {
+        font-size: 0.7rem;
+    }
+    .colorinfo {
+        font-size: 0.6rem;
+    }
+    .colorinfo div p span {
+        margin: 0 4px;
+    }
+
+    /* 콘텐츠 내 고정 영역 */
+    .btnwrap {
+        width: 2%;
+        height: auto;
+    }
+
+    .move_detail {
+        width: 20%;
+    }
+}
+
+/* 공통_컨텐츠 영역_색조 구분 */
+#vivid::before {
+    content: "선명한 색조(vivid Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#basic::before {
+    content: "기본 색조(◎ Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#deep::before {
+    content: "진한 색조(deep Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#dark::before {
+    content: "어두운 색조(dark Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#dull::before {
+    content: "탁한 색조(dull Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#soft::before {
+    content: "흐린 색조(soft Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#light::before {
+    content: "밝은 색조(light Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#pale::before {
+    content: "연한 색조(pale Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#whitish::before {
+    content: "흰 색조(whitish Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#lightgrayish::before {
+    content: "밝은회 색조(light grayish Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#grayish::before {
+    content: "회 색조(grayish Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#darkgrayish::before {
+    content: "어두운회 색조(dark grayish Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+#blackish::before {
+    content: "검은 색조(blackish Tone)";
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(255, 240, 0, 0.6);
+}
+
+/* 공통-컨텐츠 영역_색상: Munsell을 RGB로, 무채색은 Lab를 변환 값  */
+.vvR {background-color: rgb(188, 25, 51);}
+.vvYR {background-color: rgb(257, 145, 4);}
+.vvY {background-color: rgb(250, 212, -126);}
+.vvGY {background-color: rgb(150, 188, -51);}
+.vvG {background-color: rgb(-146, 143, 94);}
+.vvBG {background-color: rgb(-314, 143, 136);}
+.vvB {background-color: rgb(-294, 111, 152);}
+.vvPB {background-color: rgb(38, 124, 203);}
+.vvP {background-color: rgb(130, 71, 155);}
+.vvRP {background-color: rgb(167, 50, 111);}
+
+.bR {background-color: rgb(177, 47, 57);}
+.bYR {background-color: rgb(224, 120, -39);}
+.bY {background-color: rgb(234, 198, -33);}
+.bGY {background-color: rgb(127, 160, -5);}
+.bG {background-color: rgb(-73,113,75);}
+.bBG {background-color: rgb(-170, 113, 109);}
+.bB {background-color: rgb(-294, 111, 152);}
+.bPB {background-color: rgb(-30, 98, 176);}
+.bP {background-color: rgb(124, 76, 146);}
+.bRP {background-color: rgb(130, 29, 87);}
+
+.dpR {background-color: rgb(143, 77, 76);}
+.dpYR {background-color: rgb(136, 83, 47);}
+.dpY {background-color: rgb(115, 94, 21);}
+.dpGY {background-color: rgb(83, 104, 33);}
+.dpG {background-color: rgb(24, 109, 79);}
+.dpBG {background-color: rgb(-41, 109, 105);}
+.dpB {background-color: rgb(-10, 105, 129);}
+.dpPB {background-color: rgb(70, 97, 137);}
+.dpP {background-color: rgb(113, 85, 128);}
+.dpRP {background-color: rgb(136, 78, 103);}
+
+.dkR {background-color: rgb(116, 51, 53);}
+.dkYR {background-color: rgb(109, 59, 25);}
+.dkY {background-color: rgb(84, 70, 30);}
+.dkGY {background-color: rgb(63, 76, 37);}
+.dkG {background-color: rgb(-22, 58, 37);}
+.dkBG {background-color: rgb(-47, 58, 58);}
+.dkB {background-color: rgb(-294, 111, 152);}
+.dkPB {background-color: rgb(17, 49, 88);}
+.dkP {background-color: rgb(66, 37, 76);}
+.dkRP {background-color: rgb(80, 31, 60);}
+
+.dlR {background-color: rgb(130, 84, 82);}
+.dlYR {background-color: rgb(127, 87, 63);}
+.dlY {background-color: rgb(111, 95, 48);}
+.dlGY {background-color: rgb(88, 101, 56);}
+.dlG {background-color: rgb(59, 105, 84);}
+.dlBG {background-color: rgb(47, 105, 102);}
+.dlB {background-color: rgb(53, 103, 118);}
+.dlPB {background-color: rgb(81, 97, 123);}
+.dlP {background-color: rgb(108, 89, 118);}
+.dlRP {background-color: rgb(124, 85, 100);}
+
+.sfR {background-color: rgb(181, 137, 134);}
+.sfYR {background-color: rgb(179, 139, 113);}
+.sfY {background-color: rgb(162, 147, 96);}
+.sfGY {background-color: rgb(140, 153, 103);}
+.sfG {background-color: rgb(107, 158, 133);}
+.sfBG {background-color: rgb(98, 158, 151);}
+.sfB {background-color: rgb(107, 155, 167);}
+.sfPB {background-color: rgb(133, 148, 173);}
+.sfP {background-color: rgb(157, 142, 168);}
+.sfRP {background-color: rgb(174, 137, 149);}
+
+.ltR {background-color: rgb(238, 149, 144);}
+.ltYR {background-color: rgb(230, 157, 100);}
+.ltY {background-color: rgb(199, 172, 65);}
+.ltGY {background-color: rgb(158, 184, 77);}
+.ltG {background-color: rgb(83, 193, 146);}
+.ltBG {background-color: rgb(43, 193, 180);}
+.ltB {background-color: rgb(61, 188, 217);}
+.ltPB {background-color: rgb(135, 176, 229);}
+.ltP {background-color: rgb(194, 161, 216);}
+.ltRP {background-color: rgb(229, 150, 178);}
+
+.plR {background-color: rgb(234, 189, 185);}
+.plYR {background-color: rgb(233, 192, 162);}
+.plY {background-color: rgb(214, 200, 145);}
+.plGY {background-color: rgb(194, 206, 149);}
+.plG {background-color: rgb(159, 212, 183);}
+.plBG {background-color: rgb(150, 212, 202);}
+.plB {background-color: rgb(157, 208, 221);}
+.plPB {background-color: rgb(183, 201, 226);}
+.plP {background-color: rgb(208, 195, 221);}
+.plRP {background-color: rgb(227, 191, 201);}
+
+.whR {background-color: rgb(241, 223, 221);}
+.whYR {background-color: rgb(244, 223, 208);}
+.whY {background-color: rgb(236, 227, 195);}
+.whGY {background-color: rgb(224, 231, 196);}
+.whG {background-color: rgb(204, 234, 216);}
+.whBG {background-color: rgb(201, 234, 227);}
+.whB {background-color: rgb(208, 231, 236);}
+.whPB {background-color: rgb(221, 228, 237);}
+.whP {background-color: rgb(230, 225, 235);}
+.whRP {background-color: rgb(237, 223, 227);}
+
+.ltgyR {background-color: rgb(190, 169, 167);}
+.ltgyYR {background-color: rgb(196, 175, 161);}
+.ltgyY {background-color: rgb(182, 173, 146);}
+.ltgyGY {background-color: rgb(170, 177, 148);}
+.ltgyG {background-color: rgb(153, 180, 165);}
+.ltgyBG {background-color: rgb(150, 180, 175);}
+.ltgyB {background-color: rgb(155, 177, 183);}
+.ltgyPB {background-color: rgb(167, 174, 185);}
+.ltgyP {background-color: rgb(178, 171, 183);}
+.ltgyRP {background-color: rgb(186, 169, 174);}
+
+.gR {background-color: rgb(138, 117, 115);}
+.gYR {background-color: rgb(138, 117, 105);}
+.gY {background-color: rgb(129, 121, 97);}
+.gGY {background-color: rgb(118, 125, 101);}
+.gG {background-color: rgb(104, 127, 115);}
+.gBG {background-color: rgb(150, 180, 175);}
+.gB {background-color: rgb(104, 125, 131);}
+.gPB {background-color: rgb(115, 122, 134);}
+.gP {background-color: rgb(127, 119, 132);}
+.gRP {background-color: rgb(135, 117, 123);}
+
+.dkgyR {background-color: rgb(90, 65, 65);}
+.dkgyYR {background-color: rgb(88, 67, 56);}
+.dkgyY {background-color: rgb(79, 71, 51);}
+.dkgyGY {background-color: rgb(68, 74, 56);}
+.dkgyG {background-color: rgb(58, 76, 67);}
+.dkgyBG {background-color: rgb(53, 76, 74);}
+.dkgyB {background-color: rgb(53, 75, 82);}
+.dkgyPB {background-color: rgb(64, 72, 87);}
+.dkgyP {background-color: rgb(79, 67, 85);}
+.dkgyRP {background-color: rgb(87, 66, 74);}
+
+.bkR {background-color: rgb(65,43,45);}
+.bkYR {background-color: rgb(63, 45, 37);}
+.bkY {background-color: rgb(55, 48, 31);}
+.bkGY {background-color: rgb(46, 51, 37);}
+.bkG {background-color: rgb(38, 52, 45);}
+.bkBG {background-color: rgb(34, 52, 52);}
+.bkB {background-color: rgb(33, 52, 58);}
+.bkPB {background-color: rgb(42, 49, 63);}
+.bkP {background-color: rgb(55, 45, 60);}
+.bkRP {background-color: rgb(63, 43, 53);}
+
+.n95 {background-color: rgb(244, 240, 230);}
+.n90 {background-color: rgb(231, 230, 223);}
+.n80 {background-color: rgb(201, 201, 199);}
+.n70 {background-color: rgb(181, 181, 180);}
+.n60 {background-color: rgb(156, 156, 154);}
+.n50 {background-color: rgb(132, 132, 131);}
+.n40 {background-color: rgb(109, 109, 109);}
+.n30 {background-color: rgb(88, 88, 89);}
+.n20 {background-color: rgb(72, 72, 72);}
+.n15 {background-color: rgb(66, 66, 65);}
+
+.R {background-color: rgb(181, 66, 64);}
+.YR {background-color: rgb(235, 112, 13);}
+.Y {background-color: rgb(247, 212, 0);}
+.GY {background-color: rgb(128, 191, 71);}
+.G {background-color: rgb(-126, 115, 56);}
+.BG {background-color: rgb(-160, 85, 101);}
+.B {background-color: rgb(-54, 101, 162);}
+.PB {background-color: rgb(40, 45, 87);}
+.P {background-color: rgb(102, 48, 122);}
+.RP {background-color: rgb(134, 26, 77);}
+.Pk {background-color: rgb(235, 150, 160);}
+.Br {background-color: rgb(144, 79, 27);}
+.Wh {background-color: rgb(244, 240, 230);}
+.Gy {background-color: rgb(132, 132, 131);}
+.Bk {background-color: rgb(58, 58, 59);}
+
+.R25 {background-color: rgb(187, 21, 71);}
+.R50 {background-color: rgb(188, 25, 51);}
+.R75 {background-color: rgb(195, -3, 23);}
+.R100 {background-color: rgb(212, 76, 19);}
+
+.YR25 {background-color: rgb(235, 112, 13);}
+.YR50 {background-color: rgb(224, 120, -39);}
+.YR75 {background-color: rgb(213, 127, -74);}
+.YR100 {background-color: rgb(230, 160, -10);}
+
+.Y25 {background-color: rgb(254, 191, -181);}
+.Y50 {background-color: rgb(236, 198, -140);}
+.Y75 {background-color: rgb(223, 202, -52);}
+.Y100 {background-color: rgb(212, 206, -57);}
+
+.GY25 {background-color: rgb(169, 183, -86);}
+.GY50 {background-color: rgb(154, 186, 40);}
+.GY75 {background-color: rgb(90, 166, -8);}
+.GY100 {background-color: rgb(109, 225, 99);}
+
+.G25 {background-color: rgb(23, 169, 99);}
+.G50 {background-color: rgb(-146, 143, 94);}
+.G75 {background-color: rgb(-187, 143, 104);}
+.G100 {background-color: rgb(-221, 143, 113);}
+
+.BG25 {background-color: rgb(-263, 143, 122);}
+.BG50 {background-color: rgb(-314, 143, 136);}
+.BG75 {background-color: rgb(-340, 142, 146);}
+.BG100 {background-color: rgb(-357, 141, 158);}
+
+.B25 {background-color: rgb(-346, 140, 168);}
+.B50 {background-color: rgb(-284, 137, 177);}
+.B75 {background-color: rgb(-223, 108, 157);}
+.B100 {background-color: rgb(-102, 131, 186);}
+
+.PB25 {background-color: rgb(-54, 101, 162);}
+.PB50 {background-color: rgb(-30, 98, 176);}
+.PB75 {background-color: rgb(51, 62, 149);}
+.PB100 {background-color: rgb(100, 81, 169);}
+
+.P25 {background-color: rgb(119, 75, 162);}
+.P50 {background-color: rgb(124, 76, 146);}
+.P75 {background-color: rgb(141, 65, 146);}
+.P100 {background-color: rgb(150, 60, 137);}
+
+.RP25 {background-color: rgb(159, 55, 125);}
+.RP50 {background-color: rgb(167, 50, 111);}
+.RP75 {background-color: rgb(171, 47, 98);}
+.RP100 {background-color: rgb(175, 44, 85);}

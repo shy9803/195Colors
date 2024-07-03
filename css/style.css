@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+/* 기본 CSS (초기화 및 설정) */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: '맑은 고딕';
+    color: #333333;
+}
+ul, ol, li {
+    list-style: none;
+}
+body {
+    width: 100%;
+    height: auto;
+    background-color: #777777;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    outline: 0;
+    display: block;
+}
+
+/* 모바일용 CSS */
+/* 기본 CSS */
+#wrap {
+    width: 100%;
+}
+.cfixed::after {
+    display: block;
+    clear: both;
+}
+
+/* 헤더 영역 */
+.header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background-color: #f0f0f0;
+}
+.inner {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    text-align: right;
+}
+.logo {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+.logo a {
+    color: #d2a871;
+}
+
+.navi {
+    width: 100%;
+}
+.gnb {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #dddddd;
+}
+.gnb > li {
+    display: flex;
+    text-align: center;
+}
+.gnb > li > a {
+    width: 100%;
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+    display: block;
+}
+.gnb > li:hover {
+    background-color: #d9ce37;
+    font-weight: bold;
+}
+
+.menu-toggle-btn {
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 35%;
+}
+.menu-toggle-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #d2a871;
+}
+.menu-toggle-btn span:nth-child(2) {
+    margin: 5px 0;
+}
+
+/* 컨텐츠 영역 CSS */
+.cardwrap {
+    width: 100%;
+    height: auto;
+}
+.card {
+    width: 94%;
+    height: auto;
+    margin: 30px auto;
+    padding: 1%;
+    background-color: #e9dfa4;
+    border-radius: 5px;
+    box-shadow: 10px 10px 30px;
+}
+.cardimg {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px auto;
+    text-align: center;
+}
+.cardimg img {
+    width: 98%;
+    height: auto;
+    border-radius: 5px;
+}
+.cardword {
+    width: 100%;
+    text-align: center;
+}
+.cardwrod h3 {
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.cardword p {
+    color: #aaaaaa;
+    font-size: 0.8rem;
+    margin: 5px 0;
+}
+.cardbtn {
+    width: 96%;
+    height: 35px;
+    text-align: center;
+    margin: 5% auto;
+    background-color: #d3b03f;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px;
+    line-height: 3;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.cardbtn p {
+    color: #f9f9f9;
+}
+.cardbtn:hover {
+    background-color: #d9ce37;
+}
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    /* 헤더 영역 */
+    header {
+        position: static;
+    }
+    .inner {
+        width: 96%;
+    }
+    .logo {
+        width: auto;
+        height: inherit;
+    }
+
+    .gnb {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        height: 80px;
+        position: static;
+        background-color: transparent;
+    }
+    .gnb > li {
+        display: inline-block;
+        width: 140px;
+        height: 100%;
+    }
+    .gnb > li > a {
+        width: auto;
+        margin: 0 10px;
+        padding: 8%;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    .menu-toggle-btn {
+        display: none !important;
+    }
+
+    /* 컨텐츠 영역 CSS */
+    .cardwrap {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .card {
+        width: 45%;
+        margin: 30px 0;
+    }
+}
+
+/* PC용 CSS*/
+@media all and (min-width: 1132px) {
+    /* 컨텐츠 영역 CSS */
+    .card {
+        width: 30%;
+        margin: 30px 0;
+    }
+}
